@@ -21,5 +21,20 @@ namespace Worsener
         {
 
         }
+
+        private void discord_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.discord.gg/YwMevvNbDY");
+        }
+
+        private void youtube_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/c/TheYoungSeth");
+        }
+
+        private void patreon_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.patreon.com/theyoungseth");
+        }
     }
 }

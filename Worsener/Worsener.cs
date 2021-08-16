@@ -12,7 +12,6 @@ namespace Worsener
         private int bitrate_Maximum = 3000;
         private int audio_bitrate_Maximum = 2000;
         private int fps_Maximum = 300;
-        private int result;
 
         public Worsener()
         {
@@ -29,7 +28,7 @@ namespace Worsener
 
         public void start_Click(object sender, EventArgs e)
         {
-            Program.Start(input_path, output_path, bitrate_box.Text, audio_bitrate_box.Text, fps_box.Text, width.Text, height.Text, progressBar1);
+            Program.Start(input_path, output_path, bitrate_box.Text, audio_bitrate_box.Text, fps_box.Text, status, progressBar1);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -144,38 +143,6 @@ namespace Worsener
             fps_box.Text = fps.Value.ToString();
         }
         private void fps_box_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void width_TextChanged(object sender, EventArgs e)
-        {
-            if (!IsDigitsOnly(width.Text))
-            {
-                width.Text = "";
-            }
-        }
-
-        private void width_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void height_TextChanged(object sender, EventArgs e)
-        {
-            if (!IsDigitsOnly(height.Text))
-            {
-                height.Text = "";
-            }
-        }
-
-        private void height_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {

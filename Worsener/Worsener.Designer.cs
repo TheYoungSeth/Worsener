@@ -25,12 +25,7 @@ namespace Worsener {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Worsener));
             this.start = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.height = new System.Windows.Forms.TextBox();
-            this.width = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.status = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fps_box = new System.Windows.Forms.TextBox();
             this.fps_label = new System.Windows.Forms.Label();
@@ -43,12 +38,12 @@ namespace Worsener {
             this.bitrate_box = new System.Windows.Forms.TextBox();
             this.bitrate_label = new System.Windows.Forms.Label();
             this.bitrate = new System.Windows.Forms.TrackBar();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.output_button = new System.Windows.Forms.Button();
             this.output_box = new System.Windows.Forms.TextBox();
             this.input_button = new System.Windows.Forms.Button();
             this.input_box = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.audio_bitrate)).BeginInit();
@@ -59,7 +54,7 @@ namespace Worsener {
             // start
             // 
             this.start.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.start.Location = new System.Drawing.Point(332, 986);
+            this.start.Location = new System.Drawing.Point(318, 984);
             this.start.Margin = new System.Windows.Forms.Padding(5);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(260, 47);
@@ -70,12 +65,8 @@ namespace Worsener {
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.height);
-            this.panel1.Controls.Add(this.width);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.progressBar1);
+            this.panel1.Controls.Add(this.status);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.fps_box);
             this.panel1.Controls.Add(this.fps_label);
@@ -88,7 +79,6 @@ namespace Worsener {
             this.panel1.Controls.Add(this.bitrate_box);
             this.panel1.Controls.Add(this.bitrate_label);
             this.panel1.Controls.Add(this.bitrate);
-            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.output_button);
             this.panel1.Controls.Add(this.output_box);
             this.panel1.Controls.Add(this.input_button);
@@ -100,75 +90,24 @@ namespace Worsener {
             this.panel1.Size = new System.Drawing.Size(912, 1095);
             this.panel1.TabIndex = 0;
             // 
-            // label6
+            // status
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(274, 813);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(331, 20);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "leave blank or 0 if you don\'t want to override it.";
-            // 
-            // height
-            // 
-            this.height.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.height.Location = new System.Drawing.Point(168, 823);
-            this.height.MaxLength = 4;
-            this.height.Name = "height";
-            this.height.Size = new System.Drawing.Size(100, 30);
-            this.height.TabIndex = 24;
-            this.height.TextChanged += new System.EventHandler(this.height_TextChanged);
-            this.height.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.height_KeyPress);
-            // 
-            // width
-            // 
-            this.width.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.width.Location = new System.Drawing.Point(168, 789);
-            this.width.MaxLength = 4;
-            this.width.Name = "width";
-            this.width.Size = new System.Drawing.Size(100, 30);
-            this.width.TabIndex = 23;
-            this.width.TextChanged += new System.EventHandler(this.width_TextChanged);
-            this.width.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.width_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(79, 826);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 25);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Height:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(79, 792);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 25);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Width:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(12, 753);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 29);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Resolution:";
+            this.status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.status.AutoSize = true;
+            this.status.Location = new System.Drawing.Point(425, 1011);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(0, 20);
+            this.status.TabIndex = 26;
+            this.status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(250, 704);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(331, 20);
+            this.label2.Size = new System.Drawing.Size(328, 20);
             this.label2.TabIndex = 19;
-            this.label2.Text = "leave blank or 0 if you don\'t want to override it.";
+            this.label2.Text = "leave blank or 0 if you don\'t want to change it.";
             // 
             // fps_box
             // 
@@ -205,9 +144,9 @@ namespace Worsener {
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(334, 609);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(331, 20);
+            this.label1.Size = new System.Drawing.Size(328, 20);
             this.label1.TabIndex = 15;
-            this.label1.Text = "leave blank or 0 if you don\'t want to override it.";
+            this.label1.Text = "leave blank or 0 if you don\'t want to change it.";
             // 
             // audio_bitrate_box
             // 
@@ -244,9 +183,9 @@ namespace Worsener {
             this.bitrate_warning.AutoSize = true;
             this.bitrate_warning.Location = new System.Drawing.Point(334, 514);
             this.bitrate_warning.Name = "bitrate_warning";
-            this.bitrate_warning.Size = new System.Drawing.Size(331, 20);
+            this.bitrate_warning.Size = new System.Drawing.Size(328, 20);
             this.bitrate_warning.TabIndex = 11;
-            this.bitrate_warning.Text = "leave blank or 0 if you don\'t want to override it.";
+            this.bitrate_warning.Text = "leave blank or 0 if you don\'t want to change it.";
             // 
             // bitrate_box
             // 
@@ -276,13 +215,6 @@ namespace Worsener {
             this.bitrate.Size = new System.Drawing.Size(889, 69);
             this.bitrate.TabIndex = 8;
             this.bitrate.Scroll += new System.EventHandler(this.bitrate_Scroll);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 1041);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(889, 44);
-            this.progressBar1.TabIndex = 7;
             // 
             // output_button
             // 
@@ -344,6 +276,13 @@ namespace Worsener {
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(17, 1039);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(884, 46);
+            this.progressBar1.TabIndex = 27;
+            // 
             // Worsener
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -376,7 +315,6 @@ namespace Worsener {
         private System.Windows.Forms.Button input_button;
         private System.Windows.Forms.Button output_button;
         private System.Windows.Forms.TextBox output_box;
-        public System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TrackBar bitrate;
         private System.Windows.Forms.TextBox bitrate_box;
         private System.Windows.Forms.Label bitrate_label;
@@ -389,12 +327,8 @@ namespace Worsener {
         private System.Windows.Forms.TextBox fps_box;
         private System.Windows.Forms.Label fps_label;
         private System.Windows.Forms.TrackBar fps;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox height;
-        private System.Windows.Forms.TextBox width;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label status;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
